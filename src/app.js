@@ -4,6 +4,7 @@ const mongoose = require('mongoose');
 const cors = require("cors");
 const authRoutes = require("./src/routes/AuthRoutes");
 const merchantRoutes = require("./src/routes/MerchantRoutes");
+const bookingRoutes = require("./src/routes/bookingRoutes");
 
 const app = express();
 app.use(bodyParser.json());
@@ -19,6 +20,7 @@ app.get('/', (req, res) => {
 });
 app.use("/auth", authRoutes)
 app.use("/merchant", merchantRoutes)
+app.use("/bookings", bookingRoutes)
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
